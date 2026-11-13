@@ -1,0 +1,101 @@
+CREATE DATABASE DB_T05429_CARLOS_ALEXANDRE;
+
+USE DB_T05429_CARLOS_ALEXANDRE;
+
+SHOW DATABASES;
+
+CREATE TABLE NOVEL(
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+    NAME VARCHAR(128) NOT NULL,
+    YEAR YEAR,
+    GENRE VARCHAR(64),
+    AUDIENCE VARCHAR(32)
+);
+
+CREATE TABLE ACTOR(
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+    NAME VARCHAR(64) NOT NULL,
+    AGE INT,
+	CHARACTER_NAME VARCHAR(64),
+    SALARY INT
+);
+
+CREATE TABLE BROADCASTER(
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+    NAME VARCHAR(64) NOT NULL,
+    COUNTRY VARCHAR(32),
+	FOUNDATION_YEAR CHAR (04)
+);
+
+#ALTER TABLE BROADCASTER RENAME COLUMN FOUNDATION TO FOUNDATION_YEAR;
+
+INSERT INTO NOVEL (NAME, YEAR, GENRE, AUDIENCE) VALUES
+('Avenida Brasil',2012, 'Drama', '14 anos'),
+('O Clone', 2001, 'Romance', '12 anos'),
+('Senhora do Destino', 2004, 'Drama', '12 anos'),
+('Mulheres de Areia', 1993, 'Drama', '14 anos'),
+('Pantanal', 1990, 'Drama', '16 anos');
+
+INSERT INTO ACTOR (NAME, AGE, CHARACTER_NAME, SALARY) VALUES
+('Débora Falabella', 47, 'Nina', 85000),
+('Murilo Benício', 54, 'Tufão', 90000),
+('Adriana Esteves', 56, 'Carminha', 95000),
+('Fernanda Montenegro', 97, 'Dona Picucha', 120000),
+('Carolina Dieckmann', 48, 'Jade', 85000);
+
+INSERT INTO BROADCASTER (NAME, COUNTRY, FOUNDATION_YEAR) VALUES
+('Rede Globo', 'Brasil', 1965),
+('SBT', 'Brasil', 1981),
+('Record TV', 'Brasil', 1953),
+('Rede Bandeirantes', 'Brasil', 1967),
+('Manchete', 'Brasil', 1984);
+
+INSERT INTO NOVEL VALUES
+(NULL, 'Chocolate com Pimenta', 2003, 'Comédia', 'Livre'),
+(NULL, 'Laços de Família', 2000, 'Romance', '12 anos'),
+(NULL, 'Mulheres Apaixonadas', 2003, 'Drama', '12 anos'),
+(NULL, 'Salve Jorge', 2012, 'Drama', '14 anos'),
+(NULL, 'Cheias de charme', 2012, 'Comédia', '10 anos');
+
+INSERT INTO ACTOR VALUES
+(NULL, 'Vera Holtz', 72, 'Dona Zefa', 88000),
+(NULL, 'Antonio Fagundes', 77, 'Leôncio', 110000),
+(NULL, 'Camila Pitanga', 49, 'Juma', 82000),
+(NULL, 'Lázaro Ramos', 48, 'Foguinho', 78000),
+(NULL, 'Cléo Pires', 43, 'Cleo', 70000);
+
+INSERT INTO BROADCASTER VALUES
+(NULL, 'RedeTV!', 'Brasil', 1999),
+(NULL, 'TV Brasil', 'Brasil', 2007),
+(NULL, 'Rede Vida', 'Brasil', 1995),
+(NULL, 'TV Gazeta', 'Brasil', 1970),
+(NULL, 'TV Aparecida', 'Brasil', 2005);
+
+SELECT * FROM NOVEL;
+
+SELECT * FROM ACTOR;
+
+SELECT * FROM BROADCASTER;
+
+SELECT NAME, YEAR FROM NOVEL;
+
+SELECT NAME, GENRE FROM NOVEL;
+
+SELECT NAME, AGE FROM ACTOR;
+
+SELECT NAME, SALARY FROM ACTOR;
+
+SELECT NAME FROM BROADCASTER;
+
+SELECT * FROM NOVEL ORDER BY YEAR ASC;
+
+SELECT * FROM NOVEL ORDER BY YEAR DESC;
+
+SELECT * FROM ACTOR ORDER BY AGE ASC;
+
+SELECT * FROM ACTOR ORDER BY AGE DESC;
+
+SELECT * FROM BROADCASTER ORDER BY FOUNDATION_YEAR ASC;
+
+SELECT * FROM BROADCASTER ORDER BY FOUNDATION_YEAR DESC;
+
